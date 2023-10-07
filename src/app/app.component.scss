@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+mat-card-header{
+  text-align: center;
+  margin: auto;
+}
+mat-card {
+  margin: 3rem auto;
+  padding: 1rem;
+  background-color: #F5FDEA;
+  width: 30%;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin: auto;
+}
+
+.imageCover {
+  width: 185px;
+}
+
+textarea {
+  width: 190px;
+  height: 100px;
+}
+
+button {
+  margin: auto;
+}
+
+span, mat-icon {
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+
+
