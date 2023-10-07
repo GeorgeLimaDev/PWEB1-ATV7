@@ -4,20 +4,26 @@
   align-items: flex-start;
 }
 
-mat-card-header{
+mat-card-header, mat-card-content{
   text-align: center;
   margin: auto;
 }
 mat-card {
-  margin: 3rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   background-color: #F5FDEA;
   width: 30%;
 }
 
+mat-card-title, mat-card-subtitle {
+  padding: 1rem;
+}
+
 mat-card-content {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 mat-form-field {
@@ -40,6 +46,25 @@ button {
 span, mat-icon {
   vertical-align: middle;
   padding: 0.5rem;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.anime-card {
+  width: 400px;
+  height: 350px;
+}
+
+img {
+  max-height: 200px;
+  max-width: 150px;
+}
+
+.animeTitle, .animeReview {
+  margin-top: -1rem;
 }
 
 

@@ -1,33 +1,55 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Anime Rating</mat-card-title>
-    <mat-card-subtitle>Insert an Anime you have watched. <br> Give it a rating and a review.</mat-card-subtitle>
+    <mat-card-title>Anime Listing</mat-card-title>
+    <mat-card-subtitle>Insert an Anime you have watched. <br> Give it a rating or a review.</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field appearance="fill">
       <mat-label>Insert an Anime</mat-label>
       <input matInput [(ngModel)]="animeRegistering.title" placeholder="Title">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Image cover</mat-label>
+    <mat-form-field appearance="fill" class="titleInput">
+      <mat-label>Image cover URL</mat-label>
       <input matInput [(ngModel)]="animeRegistering.image" class="imageCover" placeholder="www.image.com/Anime.png">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
 
     <mat-form-field class="review">
-      <mat-label>Textarea</mat-label>
+      <mat-label>Rating or review</mat-label>
       <textarea matInput  [(ngModel)]="animeRegistering.review" placeholder="Leave a short review"></textarea>
     </mat-form-field>
 
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="addAnime()" mat-fab extended color="primary">
+    <button (click)="addAnime()" mat-raised-button extended color="primary">
       <mat-icon>add_box</mat-icon>
       <span>Insert</span>
     </button>
   </mat-card-actions>
 </mat-card>
+
+<div class="container">
+  <mat-card *ngFor="let anime of animes" class="anime-card">
+    <mat-card-header>
+      <mat-card-title class="animeTitle">
+        {{ anime.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        <img src="{{ anime.image }}" alt="">
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="animeReview">
+      {{anime.review}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="editAnime(anime)" class="buttons animeButtons" color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-raised-button (click)="delAnime(anime)" class="buttons animeButtons" color="primary">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
 
